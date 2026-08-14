@@ -23,15 +23,22 @@ def get_tournaments(year):
     "limit": 50
     }
     response = requests.get("https://api.liquipedia.net/api/v3/tournament", headers=headers, params=params)
-
-
     if response.status_code != 200:
         print("Error:", response.status_code, response.text)
     else:
         return(response.json())
 
 
-def get_top(pagename, top=8):
+def placement_to_number(placement_str):
+    if placement_str == "":
+        return None
+    if "-" in placement_str:
+        low, high = placement_str.split("-")
+        return (int(low) + int(high)) / 2
+    return int(placement_str)
+
+
+def get_top(pagename, top=16):
     params = {
         "wiki" : "fighters",
         "conditions": f"[[pagename::{pagename}]]",
@@ -42,7 +49,20 @@ def get_top(pagename, top=8):
     if response.status_code != 200:
         print("Error:", response.status_code, response.text)
     else:
-        return(response.json())
+        data = response.json()
+        for row in data["result"]:
+            row["placement_number"] = placement_to_number(row.get("placement", ""))
+
+        real_rows = [
+            row for row in data["result"]
+            if row["placement_number"] is not None
+            and row["placement_number"] <= top
+            and row.get("opponentplayers", {}).get("p1chars", "") != ""
+        ]
+        real_rows.sort(key=lambda row: row["placement_number"])
+
+        data["result"] = real_rows
+        return data
 
 
 if __name__ == "__main__":
@@ -59,13 +79,13 @@ if __name__ == "__main__":
             continue
 
         print("Fetching top 8 for:", name)
-        top8 = get_top(pagename, top=8)
+        top_players = get_top(pagename, top=16) #only returns top 8 if tournament does not hold data past top 8
 
-        if top8 is None:
+        if top_players is None:
             print("  skipped (request failed)")
             continue
 
-        all_data[name] = top8["result"]
+        all_data[name] = top_players["result"]
         time.sleep(1)
 
     os.makedirs("data", exist_ok=True)
