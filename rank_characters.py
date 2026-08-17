@@ -1,52 +1,52 @@
 import json
+import statistics
 
-def placement_to_number(placement_str):
-    if placement_str == "":
-        return None
-    if "-" in placement_str:
-        low, high = placement_str.split("-")
-        return (int(low) + int(high)) / 2
-    return int(placement_str)
+CONSISTENCY_WEIGHT = 0.5  # higher = punish inconsistent players more
+MIN_APPEARANCES = 3  # players below this are excluded, too little data to trust
 
 
 def load_raw_data():
-    with open("data/rankings_raw.json") as f:
+    with open("data/player_placements_raw.json") as f:
         return json.load(f)
 
 
 def main():
     data = load_raw_data()
-    count = 0
-   
-    placements_by_character = {"Ryu": [], "Ken": [], "Chun-Li": [], "Guile": [], "E. Honda": [], "Blanka": [], "Zangief": [], "Dhalsim": [], "Cammy": [], "Dee Jay": [], "Juri": [], "Luke": [], "Jamie": [], "Kimberly": [], "Manon": [], "Marisa": [], "Lily": [], "JP": [], "Rashid": [], "A.K.I.": [], "Ed": [], "Akuma": [], "M. Bison": [], "Terry": [], "Mai": [], "Elena": [], "C. Viper": [], "Alex": [], "Sagat": [], "Ingrid": [], "Yasmine" : []}
 
-    for tournament_name, rows in data.items():
-        count = count+1
-        for row in rows:
-            
-            main_character = row['opponentplayers']["p1chars"]
-            if "," in main_character:
-                main_character = main_character.split(",")[0]
+    placements_by_player = {
+        player: [row["placement_number"] for row in rows]
+        for player, rows in data.items()
+    }
 
-            
-            placement_number = placement_to_number(row["placement"])
-            
-            placements_by_character [main_character].append(placement_number)
-            pass
+    scores = {}
+    stats_by_player = {}
+    for player in placements_by_player:
+        placements = placements_by_player[player]
 
-    averages = {}
-    for char in placements_by_character:
-        if len(placements_by_character[char]) == 0:
-            averages[char] = 0
+        if len(placements) < MIN_APPEARANCES:
             continue
+
         ind_avg = 0
-        for placements in placements_by_character[char]:
-            ind_avg += placements
-        averages[char] = ind_avg / len(placements_by_character[char])
+        for p in placements:
+            ind_avg += p
+        avg = ind_avg / len(placements)
+
+        std_dev = statistics.pstdev(placements)
+
+        scores[player] = avg + CONSISTENCY_WEIGHT * std_dev
+        stats_by_player[player] = {"average": avg, "std_dev": std_dev}
 
 
-    ranked_names = sorted(averages, key=averages.get)
-    ranked = [{"character": name, "average": averages[name]} for name in ranked_names]
+    ranked_names = sorted(scores, key=scores.get)
+    ranked = [
+        {
+            "player": name,
+            "score": scores[name],
+            "average": stats_by_player[name]["average"],
+            "std_dev": stats_by_player[name]["std_dev"],
+        }
+        for name in ranked_names
+    ]
 
     with open("data/rankings.json","w") as file:
         json.dump(ranked, file, indent=2)

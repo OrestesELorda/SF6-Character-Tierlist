@@ -65,6 +65,37 @@ def get_top(pagename, top=16):
         return data
 
 
+def get_player_placements(player_name):
+    params = {
+        "wiki": "fighters",
+        "conditions": f"[[opponentname::{player_name}]] AND [[game::sf6]] AND [[liquipediatier::1]] AND [[startdate_year::2026]]",
+        "limit": 50
+    }
+
+    response = requests.get("https://api.liquipedia.net/api/v3/placement", headers=headers, params=params)
+    for attempt in range(3):
+        if response.status_code != 429:
+            break
+        print(f"  rate limited, waiting before retry ({attempt + 1}/3)...")
+        time.sleep(10)
+        response = requests.get("https://api.liquipedia.net/api/v3/placement", headers=headers, params=params)
+
+    if response.status_code != 200:
+        print("Error:", response.status_code, response.text)
+    else:
+        data = response.json()
+        for row in data["result"]:
+            row["placement_number"] = placement_to_number(row.get("placement", ""))
+
+        real_rows = [
+            row for row in data["result"]
+            if row["placement_number"] is not None
+        ]
+
+        data["result"] = real_rows
+        return data
+
+
 if __name__ == "__main__":
     tournaments = get_tournaments(2026)
 

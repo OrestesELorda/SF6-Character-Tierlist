@@ -1,126 +1,344 @@
 [
   {
-    "character": "E. Honda",
-    "average": 0
+    "player": "Vxbao",
+    "score": 12.670540018881466,
+    "average": 9.8,
+    "std_dev": 5.74108003776293
   },
   {
-    "character": "Dhalsim",
-    "average": 0
+    "player": "Kilzyou",
+    "score": 14.742780442768211,
+    "average": 11.5,
+    "std_dev": 6.485560885536423
   },
   {
-    "character": "Dee Jay",
-    "average": 0
+    "player": "Shigematsu",
+    "score": 18.294895300208168,
+    "average": 13.4,
+    "std_dev": 9.789790600416334
   },
   {
-    "character": "Kimberly",
-    "average": 0
+    "player": "Kobayan",
+    "score": 18.469314724882015,
+    "average": 13.8,
+    "std_dev": 9.338629449764028
   },
   {
-    "character": "Manon",
-    "average": 0
+    "player": "Ryukichi",
+    "score": 21.62409096495846,
+    "average": 18.642857142857142,
+    "std_dev": 5.96246764420263
   },
   {
-    "character": "Marisa",
-    "average": 0
+    "player": "Tantanmen",
+    "score": 22.93344988202503,
+    "average": 18.166666666666668,
+    "std_dev": 9.533566430716728
   },
   {
-    "character": "Alex",
-    "average": 0
+    "player": "Crossover",
+    "score": 23.128288714691628,
+    "average": 16.0,
+    "std_dev": 14.256577429383253
   },
   {
-    "character": "Ingrid",
-    "average": 0
+    "player": "Yamaguchi",
+    "score": 25.72057949219601,
+    "average": 18.3,
+    "std_dev": 14.84115898439202
   },
   {
-    "character": "Yasmine",
-    "average": 0
+    "player": "NL",
+    "score": 27.33033476111609,
+    "average": 22.7,
+    "std_dev": 9.260669522232181
   },
   {
-    "character": "Lily",
-    "average": 2.0
+    "player": "Gachikun",
+    "score": 29.24461006542105,
+    "average": 22.0,
+    "std_dev": 14.489220130842101
   },
   {
-    "character": "Ryu",
-    "average": 4.125
+    "player": "Micky",
+    "score": 30.22242680722738,
+    "average": 17.214285714285715,
+    "std_dev": 26.016282185883327
   },
   {
-    "character": "Akuma",
-    "average": 4.333333333333333
+    "player": "Rou",
+    "score": 31.214036791805125,
+    "average": 24.666666666666668,
+    "std_dev": 13.094740250276912
   },
   {
-    "character": "Blanka",
-    "average": 4.75
+    "player": "Hinao",
+    "score": 31.321638653039127,
+    "average": 22.214285714285715,
+    "std_dev": 18.214705877506823
   },
   {
-    "character": "Zangief",
-    "average": 4.857142857142857
+    "player": "Tokido",
+    "score": 32.74296150767647,
+    "average": 26.333333333333332,
+    "std_dev": 12.819256348686274
   },
   {
-    "character": "Jamie",
-    "average": 5.5
+    "player": "MenaRD",
+    "score": 33.25024949876149,
+    "average": 19.333333333333332,
+    "std_dev": 27.833832330856314
   },
   {
-    "character": "Sagat",
-    "average": 6.1875
+    "player": "Blaz",
+    "score": 33.59499861033897,
+    "average": 24.6,
+    "std_dev": 17.98999722067794
   },
   {
-    "character": "Cammy",
-    "average": 6.5
+    "player": "Jr.",
+    "score": 33.93828043545609,
+    "average": 25.0,
+    "std_dev": 17.876560870912183
   },
   {
-    "character": "Chun-Li",
-    "average": 6.75
+    "player": "Punk",
+    "score": 34.09103342508282,
+    "average": 24.166666666666668,
+    "std_dev": 19.848733516832308
   },
   {
-    "character": "M. Bison",
-    "average": 6.916666666666667
+    "player": "Higuchi",
+    "score": 35.881541182520635,
+    "average": 22.642857142857142,
+    "std_dev": 26.47736807932698
   },
   {
-    "character": "Ed",
-    "average": 7.428571428571429
+    "player": "Hibiki",
+    "score": 36.62077422577306,
+    "average": 25.9,
+    "std_dev": 21.441548451546126
   },
   {
-    "character": "Mai",
-    "average": 7.568181818181818
+    "player": "HotDog29",
+    "score": 37.00949617471903,
+    "average": 29.214285714285715,
+    "std_dev": 15.590420920866631
   },
   {
-    "character": "Rashid",
-    "average": 7.6875
+    "player": "Oil King",
+    "score": 37.36091054692474,
+    "average": 29.666666666666668,
+    "std_dev": 15.388487760516156
   },
   {
-    "character": "Guile",
-    "average": 9.3
+    "player": "Shuto",
+    "score": 38.784627331236614,
+    "average": 26.333333333333332,
+    "std_dev": 24.90258799580656
   },
   {
-    "character": "Terry",
-    "average": 9.38888888888889
+    "player": "Lexx",
+    "score": 39.60566499486536,
+    "average": 30.625,
+    "std_dev": 17.961329989730714
   },
   {
-    "character": "Luke",
-    "average": 9.625
+    "player": "Booce",
+    "score": 40.84942118929794,
+    "average": 27.142857142857142,
+    "std_dev": 27.413128092881607
   },
   {
-    "character": "A.K.I.",
-    "average": 9.666666666666666
+    "player": "Kabe",
+    "score": 42.31766898898247,
+    "average": 29.5625,
+    "std_dev": 25.510337977964934
   },
   {
-    "character": "Juri",
-    "average": 10.333333333333334
+    "player": "NuckleDu",
+    "score": 42.701711028430516,
+    "average": 30.875,
+    "std_dev": 23.653422056861032
   },
   {
-    "character": "JP",
-    "average": 10.333333333333334
+    "player": "NoahTheProdigy",
+    "score": 44.907236809303825,
+    "average": 30.0625,
+    "std_dev": 29.689473618607657
   },
   {
-    "character": "Elena",
-    "average": 10.5
+    "player": "Fuudo",
+    "score": 50.08766602304838,
+    "average": 35.5,
+    "std_dev": 29.175332046096752
   },
   {
-    "character": "C. Viper",
-    "average": 11.0
+    "player": "Dual Kevin",
+    "score": 50.50173219511086,
+    "average": 27.95,
+    "std_dev": 45.10346439022173
   },
   {
-    "character": "Ken",
-    "average": 13.5
+    "player": "Big Bird",
+    "score": 55.01436070471816,
+    "average": 40.5,
+    "std_dev": 29.028721409436322
+  },
+  {
+    "player": "Itabashi Zangief",
+    "score": 57.19587907405726,
+    "average": 40.875,
+    "std_dev": 32.64175814811451
+  },
+  {
+    "player": "Naooonn",
+    "score": 57.487313592375195,
+    "average": 42.166666666666664,
+    "std_dev": 30.64129385141706
+  },
+  {
+    "player": "Yuto",
+    "score": 58.31338859565489,
+    "average": 45.125,
+    "std_dev": 26.376777191309785
+  },
+  {
+    "player": "Moke",
+    "score": 60.842226785306295,
+    "average": 42.44444444444444,
+    "std_dev": 36.79556468172371
+  },
+  {
+    "player": "Craime",
+    "score": 66.72405627856972,
+    "average": 39.166666666666664,
+    "std_dev": 55.1147792238061
+  },
+  {
+    "player": "Kusanagi (French Player)",
+    "score": 67.05388386118017,
+    "average": 54.5,
+    "std_dev": 25.107767722360347
+  },
+  {
+    "player": "DingChunQiu",
+    "score": 68.68918320218886,
+    "average": 42.0,
+    "std_dev": 53.37836640437772
+  },
+  {
+    "player": "Dible",
+    "score": 73.37293167553932,
+    "average": 56.166666666666664,
+    "std_dev": 34.41253001774531
+  },
+  {
+    "player": "GO1",
+    "score": 74.71838462567266,
+    "average": 52.0,
+    "std_dev": 45.436769251345325
+  },
+  {
+    "player": "Riddles",
+    "score": 74.77646620733033,
+    "average": 53.083333333333336,
+    "std_dev": 43.38626574799398
+  },
+  {
+    "player": "Akainu",
+    "score": 76.55905540894642,
+    "average": 55.833333333333336,
+    "std_dev": 41.45144415122617
+  },
+  {
+    "player": "Leshar",
+    "score": 80.31795779596872,
+    "average": 47.75,
+    "std_dev": 65.13591559193745
+  },
+  {
+    "player": "Momochi",
+    "score": 84.74641844356856,
+    "average": 58.92857142857143,
+    "std_dev": 51.63569402999425
+  },
+  {
+    "player": "Sahara",
+    "score": 85.43149160557478,
+    "average": 58.785714285714285,
+    "std_dev": 53.291554639720985
+  },
+  {
+    "player": "Nephew",
+    "score": 85.92986946882948,
+    "average": 49.57142857142857,
+    "std_dev": 72.71688179480184
+  },
+  {
+    "player": "Hope",
+    "score": 90.84198145799753,
+    "average": 67.375,
+    "std_dev": 46.93396291599507
+  },
+  {
+    "player": "EnzoTheHokage",
+    "score": 93.38434346548141,
+    "average": 57.357142857142854,
+    "std_dev": 72.05440121667709
+  },
+  {
+    "player": "Keekuma",
+    "score": 95.22565322539054,
+    "average": 67.0,
+    "std_dev": 56.451306450781104
+  },
+  {
+    "player": "Xiao Hai",
+    "score": 97.25324203332127,
+    "average": 59.285714285714285,
+    "std_dev": 75.93505549521396
+  },
+  {
+    "player": "Mister Crimson",
+    "score": 98.39706618014797,
+    "average": 69.0,
+    "std_dev": 58.794132360295954
+  },
+  {
+    "player": "Mago",
+    "score": 106.46276442111878,
+    "average": 79.21428571428571,
+    "std_dev": 54.496957413666124
+  },
+  {
+    "player": "Dogura",
+    "score": 106.49197451347612,
+    "average": 66.0,
+    "std_dev": 80.98394902695225
+  },
+  {
+    "player": "Kintyo",
+    "score": 120.85244434508317,
+    "average": 72.4375,
+    "std_dev": 96.82988869016633
+  },
+  {
+    "player": "Hikaru",
+    "score": 128.98625216683962,
+    "average": 78.42857142857143,
+    "std_dev": 101.11536147653635
+  },
+  {
+    "player": "Chris Tatarian",
+    "score": 137.16692228978724,
+    "average": 82.83333333333333,
+    "std_dev": 108.66717791290779
+  },
+  {
+    "player": "Otani",
+    "score": 143.86518488885503,
+    "average": 98.5,
+    "std_dev": 90.73036977771004
   }
 ]
