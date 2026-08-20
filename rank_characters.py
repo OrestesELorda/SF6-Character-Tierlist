@@ -1,22 +1,13 @@
 import json
 import statistics
+from db import get_placements_by_player
 
 CONSISTENCY_WEIGHT = 0.5  # higher = punish inconsistent players more
 MIN_APPEARANCES = 3  # players below this are excluded, too little data to trust
 
 
-def load_raw_data():
-    with open("data/player_placements_raw.json") as f:
-        return json.load(f)
-
-
 def main():
-    data = load_raw_data()
-
-    placements_by_player = {
-        player: [row["placement_number"] for row in rows]
-        for player, rows in data.items()
-    }
+    placements_by_player = get_placements_by_player()
 
     scores = {}
     stats_by_player = {}

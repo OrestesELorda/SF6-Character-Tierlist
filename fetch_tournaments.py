@@ -3,6 +3,7 @@ import os
 import json
 import time
 from dotenv import load_dotenv
+from db import init_db, get_complete_tournament_pagenames, upsert_tournament
 
 
 load_dotenv()
@@ -97,30 +98,43 @@ def get_player_placements(player_name):
 
 
 if __name__ == "__main__":
+    init_db()
+    already_complete = get_complete_tournament_pagenames()
+
     tournaments = get_tournaments(2026)
 
-    all_data = {}
+    players_to_fetch = set()
 
     for t in tournaments["result"]:
         name = t["name"]
         pagename = t["pagename"]
+        startdate = t["startdate"]
 
         if t.get("shortname") == "SFL":
             print("Skipping league-type tournament:", name)
             continue
 
-        print("Fetching top 8 for:", name)
-        top_players = get_top(pagename, top=16) #only returns top 8 if tournament does not hold data past top 8
+        if pagename in already_complete:
+            print("Already complete, skipping:", name)
+            continue
+
+        print("Fetching top 16 for:", name)
+        top_players = get_top(pagename, top=16)
 
         if top_players is None:
             print("  skipped (request failed)")
             continue
 
-        all_data[name] = top_players["result"]
+        is_complete = len(top_players["result"]) > 0
+        upsert_tournament(pagename, name, startdate, is_complete)
+
+        for row in top_players["result"]:
+            players_to_fetch.add(row["opponentname"])
+
         time.sleep(1)
 
     os.makedirs("data", exist_ok=True)
-    with open("data/rankings_raw.json", "w") as f:
-        json.dump(all_data, f, indent=2)
+    with open("data/players_to_fetch.json", "w") as f:
+        json.dump(sorted(players_to_fetch), f, indent=2)
 
-    print(f"Saved {len(all_data)} tournaments to data/rankings_raw.json")
+    print(f"{len(players_to_fetch)} players need a placement fetch, saved to data/players_to_fetch.json")
