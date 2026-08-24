@@ -73,6 +73,14 @@ def replace_player_placements(player_name, rows):
     conn.close()
 
 
+def get_players_with_no_data(player_names):
+    conn = get_connection()
+    rows = conn.execute("SELECT DISTINCT player_name FROM placements").fetchall()
+    conn.close()
+    have_data = {row[0] for row in rows}
+    return [name for name in player_names if name not in have_data]
+
+
 def get_players_missing_flag():
     conn = get_connection()
     rows = conn.execute("SELECT DISTINCT player_name FROM placements WHERE flag IS NULL OR flag = ''").fetchall()
