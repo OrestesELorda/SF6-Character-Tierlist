@@ -29,6 +29,11 @@ def init_db():
             main_character TEXT
         )
     """)
+
+    existing_columns = {row[1] for row in conn.execute("PRAGMA table_info(placements)")}
+    if "flag" not in existing_columns:
+        conn.execute("ALTER TABLE placements ADD COLUMN flag TEXT")
+
     conn.commit()
     conn.close()
 
@@ -59,12 +64,40 @@ def replace_player_placements(player_name, rows):
     conn.execute("DELETE FROM placements WHERE player_name = ?", (player_name,))
     for row in rows:
         main_character = row["opponentplayers"].get("p1chars", "").split(",")[0]
+        flag = row["opponentplayers"].get("p1flag", "")
         conn.execute("""
-            INSERT INTO placements (player_name, pagename, placement, placement_number, main_character)
-            VALUES (?, ?, ?, ?, ?)
-        """, (player_name, row["pagename"], row["placement"], row["placement_number"], main_character))
+            INSERT INTO placements (player_name, pagename, placement, placement_number, main_character, flag)
+            VALUES (?, ?, ?, ?, ?, ?)
+        """, (player_name, row["pagename"], row["placement"], row["placement_number"], main_character, flag))
     conn.commit()
     conn.close()
+
+
+def get_players_missing_flag():
+    conn = get_connection()
+    rows = conn.execute("SELECT DISTINCT player_name FROM placements WHERE flag IS NULL OR flag = ''").fetchall()
+    conn.close()
+    return [row[0] for row in rows]
+
+
+def get_player_details():
+    conn = get_connection()
+    rows = conn.execute("SELECT player_name, flag, main_character FROM placements").fetchall()
+    conn.close()
+
+    details = {}
+    for player_name, flag, main_character in rows:
+        if player_name not in details:
+            details[player_name] = {"flag": "", "characters": set()}
+        if flag:
+            details[player_name]["flag"] = flag
+        if main_character:
+            details[player_name]["characters"].add(main_character)
+
+    for player_name in details:
+        details[player_name]["characters"] = sorted(details[player_name]["characters"])
+
+    return details
 
 
 def get_placements_by_player():
