@@ -48,7 +48,7 @@ const countryCodes = {
 
 export function getFlagImage(countryName) {
   const code = countryCodes[countryName]
-  return code ? `/flags/${code}.svg` : null
+  return code ? `${import.meta.env.BASE_URL}flags/${code}.svg` : null
 }
 
 export default countryCodes

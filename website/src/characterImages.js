@@ -34,7 +34,7 @@ const characterImages = {
 
 export function getCharacterImage(characterName) {
   const filename = characterImages[characterName]
-  return filename ? `/characters/${filename}` : null
+  return filename ? `${import.meta.env.BASE_URL}characters/${filename}` : null
 }
 
 export default characterImages
