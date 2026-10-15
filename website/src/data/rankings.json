@@ -23,6 +23,17 @@
     "tier": "S"
   },
   {
+    "player": "Kobayan",
+    "score": 16.566878226130008,
+    "average": 12.153846153846153,
+    "std_dev": 8.826064144567706,
+    "flag": "Japan",
+    "characters": [
+      "Zangief"
+    ],
+    "tier": "S"
+  },
+  {
     "player": "Shigematsu",
     "score": 16.958145641837202,
     "average": 12.333333333333334,
@@ -30,17 +41,6 @@
     "flag": "Japan",
     "characters": [
       "Blanka"
-    ],
-    "tier": "S"
-  },
-  {
-    "player": "Kobayan",
-    "score": 17.26020832843114,
-    "average": 12.833333333333334,
-    "std_dev": 8.853749990195617,
-    "flag": "Japan",
-    "characters": [
-      "Zangief"
     ],
     "tier": "S"
   },
@@ -137,6 +137,30 @@
     "tier": "A"
   },
   {
+    "player": "Hinao",
+    "score": 29.081273988104652,
+    "average": 20.125,
+    "std_dev": 17.912547976209304,
+    "flag": "Japan",
+    "characters": [
+      "Luke",
+      "Ryu",
+      "Sagat"
+    ],
+    "tier": "A"
+  },
+  {
+    "player": "Punk",
+    "score": 29.24477297301663,
+    "average": 19.8125,
+    "std_dev": 18.864545946033264,
+    "flag": "United States",
+    "characters": [
+      "Cammy"
+    ],
+    "tier": "A"
+  },
+  {
     "player": "MenaRD",
     "score": 29.992125162334606,
     "average": 16.714285714285715,
@@ -179,30 +203,6 @@
     "flag": "China",
     "characters": [
       "M. Bison"
-    ],
-    "tier": "A"
-  },
-  {
-    "player": "Hinao",
-    "score": 31.321638653039127,
-    "average": 22.214285714285715,
-    "std_dev": 18.214705877506823,
-    "flag": "Japan",
-    "characters": [
-      "Luke",
-      "Ryu",
-      "Sagat"
-    ],
-    "tier": "A"
-  },
-  {
-    "player": "Punk",
-    "score": 31.70851059694196,
-    "average": 22.214285714285715,
-    "std_dev": 18.988449765312488,
-    "flag": "United States",
-    "characters": [
-      "Cammy"
     ],
     "tier": "A"
   },
@@ -275,6 +275,17 @@
     "tier": "B"
   },
   {
+    "player": "Lexx",
+    "score": 36.398175264860924,
+    "average": 27.318181818181817,
+    "std_dev": 18.159986893358216,
+    "flag": "United States",
+    "characters": [
+      "Guile"
+    ],
+    "tier": "B"
+  },
+  {
     "player": "Kingsvega",
     "score": 36.90021186060297,
     "average": 31.0,
@@ -293,17 +304,6 @@
     "flag": "United States",
     "characters": [
       "Terry"
-    ],
-    "tier": "B"
-  },
-  {
-    "player": "Lexx",
-    "score": 38.23812060782355,
-    "average": 29.3,
-    "std_dev": 17.8762412156471,
-    "flag": "United States",
-    "characters": [
-      "Guile"
     ],
     "tier": "B"
   },
@@ -342,6 +342,17 @@
     "tier": "B"
   },
   {
+    "player": "Dual Kevin",
+    "score": 44.84859891008398,
+    "average": 24.73076923076923,
+    "std_dev": 40.23565935862949,
+    "flag": "United States",
+    "characters": [
+      "Rashid"
+    ],
+    "tier": "B"
+  },
+  {
     "player": "NuckleDu",
     "score": 45.5773143718659,
     "average": 33.72222222222222,
@@ -374,17 +385,6 @@
     "characters": [
       "Alex",
       "M. Bison"
-    ],
-    "tier": "C"
-  },
-  {
-    "player": "Dual Kevin",
-    "score": 48.80160946839738,
-    "average": 27.272727272727273,
-    "std_dev": 43.057764391340214,
-    "flag": "United States",
-    "characters": [
-      "Rashid"
     ],
     "tier": "C"
   },
@@ -476,6 +476,17 @@
     "characters": [
       "Mai",
       "Terry"
+    ],
+    "tier": "C"
+  },
+  {
+    "player": "Tachikawa",
+    "score": 71.81177954285492,
+    "average": 49.55555555555556,
+    "std_dev": 44.51244797459872,
+    "flag": "Japan",
+    "characters": [
+      "C. Viper"
     ],
     "tier": "D"
   },
@@ -570,6 +581,17 @@
     "tier": "D"
   },
   {
+    "player": "Dogura",
+    "score": 89.81639166606521,
+    "average": 55.8125,
+    "std_dev": 68.00778333213044,
+    "flag": "Japan",
+    "characters": [
+      "Elena"
+    ],
+    "tier": "D"
+  },
+  {
     "player": "Hope",
     "score": 90.84198145799753,
     "average": 67.375,
@@ -615,17 +637,6 @@
     "tier": "F"
   },
   {
-    "player": "Dogura",
-    "score": 97.36863179773201,
-    "average": 59.75,
-    "std_dev": 75.237263595464,
-    "flag": "Japan",
-    "characters": [
-      "Elena"
-    ],
-    "tier": "F"
-  },
-  {
     "player": "Mister Crimson",
     "score": 98.39706618014797,
     "average": 69.0,
@@ -645,6 +656,18 @@
     "flag": "Japan",
     "characters": [
       "Mai"
+    ],
+    "tier": "F"
+  },
+  {
+    "player": "Problem X",
+    "score": 108.63458801958181,
+    "average": 76.2,
+    "std_dev": 64.86917603916362,
+    "flag": "United Kingdom",
+    "characters": [
+      "Alex",
+      "M. Bison"
     ],
     "tier": "F"
   },
